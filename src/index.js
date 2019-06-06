@@ -69,7 +69,7 @@ app.use(
   })
 );
 
-app.use('/stripe', express.static(`${__dirname}/public`));
+app.use('/stripe/charge', express.static(`${__dirname}/public`));
 
 app.use(router);
 

@@ -23,14 +23,15 @@ In order to install and run this project locally, you would need to have the fol
 * create a `.env` file and copy the contents of the `.env.sample` file into it and supply the values for each variable
 
 ```sh
-cp .evn.sample .env
+cp .env.sample .env
 ```
-
 * Create a MySQL database and run the `sql` file in the database directory to migrate the database
 
 ```sh
-cat ./src/database/database.sql | mysql -u <dbuser> -D <databasename> -p
+mysql -u <dbuser> -D <databasename> -p < ./src/database/database.sql
 ```
+
+* Run `npm run dev` to start the app in development
 
 ## Request and Response Object API guide for all Endpoints
 Check [here](https://docs.google.com/document/d/1J12z1vPo8S5VEmcHGNejjJBOcqmPrr6RSQNdL58qJyE/edit?usp=sharing)

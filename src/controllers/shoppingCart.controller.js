@@ -132,10 +132,29 @@ class ShoppingCartController {
   }
 
   /**
+   *
+   *
    * @static
-   * @param {*} req 
-   * @param {*} res 
-   * @param {*} next 
+   * @param {obj} req express request object
+   * @param {obj} res express response object
+   * @returns {json} returns json response with order summary
+   * @memberof ShoppingCartController
+   */
+  static async getOrderSummary(req, res, next) {
+    const { orderId } = req.params;
+    const { customerId } = req;
+    try {
+      // write code to get order summary
+    } catch (error) {
+      return next(error);
+    }
+  }
+
+  /**
+   * @static
+   * @param {*} req
+   * @param {*} res
+   * @param {*} next
    */
   static async processStripePayment(req, res, next) {
     const { email, stripeToken, orderId } = req.body;
