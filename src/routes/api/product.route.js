@@ -6,12 +6,12 @@ const router = Router();
 router.get('/products', redisCache, ProductController.getAllProducts);
 router.get('/products/:productId', redisCache, ProductController.getProduct);
 router.get(
-  '/products/in-category/:categoryId',
+  '/products/inCategory/:categoryId',
   redisCache,
   ProductController.getProductsByCategory
 );
 router.get(
-  '/products/in-department/:departmentId',
+  '/products/inDepartment/:departmentId',
   redisCache,
   ProductController.getProductsByDepartment
 );
