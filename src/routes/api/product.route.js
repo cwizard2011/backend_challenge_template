@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import ProductController from '../../controllers/product.controller';
 
-// fix bug in these routes
+// These are valid routes but they may contain a bug, please try to define and fix them
 
 const router = Router();
 router.get('/products', ProductController.toString);

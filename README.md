@@ -1,6 +1,6 @@
-# ECOMMERCE-SHOP
+# Turing Back End Challenge
 
-e-commerce application
+Your goals in this project will be completing missing functions or fix the bugs remain inside our existing code, please follow our instruction below to run the project and start working on it.
 
 ## Getting started
 
