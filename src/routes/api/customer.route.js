@@ -3,7 +3,7 @@ import CustomerController from '../../controllers/customer.controller';
 import CustomerValidator from '../../middlewares/customerValidator';
 import Authenticator from '../../middlewares/authenticator';
 
-// Fix the bug in these routes
+// These are valid routes but they may contain a bug, please try to define and fix them
 
 const router = Router();
 router.post(
