@@ -5,6 +5,6 @@ import redisCache from '../../middlewares/redisCache';
 const router = Router();
 
 router.get('/shipping/regions', redisCache, ShippingController.getShippingRegions);
-router.get('/shipping/regions/:shippingRegionId', redisCache, ShippingController.getShippingType);
+router.get('/shipping/regions/:shipping_region_id', redisCache, ShippingController.getShippingType);
 
 export default router;

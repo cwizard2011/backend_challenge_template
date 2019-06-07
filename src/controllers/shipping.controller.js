@@ -34,11 +34,11 @@ class ShippingController {
    * @memberof ShippingController
    */
   static async getShippingType(req, res, next) {
-    const { shippingRegionId } = req.params;
+    const { shipping_region_id } = req.params; // eslint-disable-line
     try {
       const shippingTypes = await Shipping.findAll({
         where: {
-          shipping_region_id: shippingRegionId,
+          shipping_region_id,
         },
       });
 

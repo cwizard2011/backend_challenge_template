@@ -1,7 +1,7 @@
-/** 
+/**
  * Check each method in the shopping cart controller and add code to implement
  * the functionality or fix any bug.
-*/
+ */
 
 import uniqid from 'uniqid';
 import stripe from 'stripe';
@@ -24,6 +24,7 @@ class ShoppingCartController {
    */
   static generateUniqueCart(req, res) {
     // implement method to generate unique cart Id
+    return res.status(200).json({ message: 'this works' });
   }
 
   /**
@@ -36,16 +37,14 @@ class ShoppingCartController {
    * @memberof ShoppingCartController
    */
   static async addItemToCart(req, res, next) {
-    const { productId, attributes, quantity } = req.body;
+    const { product_id, attributes, quantity } = req.body;  // eslint-disable-line
     const { cartId } = req.session;
-    
     // implement function to add item to cart
+    return res.status(200).json({ message: 'this works' });
   }
 
   /**
-   * gets items in a cart, if cartId is supplied in req params it uses that to query
-   * otherwise, it uses the cartId stored in the session
-   * if neither exists it creates a new id and stores it in session
+   * get shopping cart using the cart_id
    *
    * @static
    * @param {obj} req express request object
@@ -54,8 +53,23 @@ class ShoppingCartController {
    * @memberof ShoppingCartController
    */
   static async getCart(req, res, next) {
-    
+    const { cart_id } = req.params; // eslint-disable-line
     // implement method to get cart items
+    return res.status(200).json({ message: 'this works' });
+  }
+
+  /**
+   * update cart item quantity using the item_id in the request param
+   *
+   * @static
+   * @param {obj} req express request object
+   * @param {obj} res express response object
+   * @returns {json} returns json response with cart
+   * @memberof ShoppingCartController
+   */
+  static async updateCartItem(req, res, next) {
+    const { item_id } = req.params // eslint-disable-line
+    return res.status(200).json({ message: 'this works' });
   }
 
   /**
@@ -68,8 +82,9 @@ class ShoppingCartController {
    * @memberof ShoppingCartController
    */
   static async emptyCart(req, res, next) {
-    const { cartId } = req.session;
-   // implement method to empty cart
+    const { cart_id } = req.session;  // eslint-disable-line
+    // implement method to empty cart
+    return res.status(200).json({ message: 'this works' });
   }
 
   /**
@@ -83,8 +98,8 @@ class ShoppingCartController {
    * @memberof ShoppingCartController
    */
   static async removeItemFromCart(req, res, next) {
-    const { cartId } = req.session;
-    const { itemId } = req.params;
+    const { cart_id } = req.session;  // eslint-disable-line
+    const { item_id } = req.params;  // eslint-disable-line
 
     try {
       // implement code to remove item from cart here
@@ -103,10 +118,9 @@ class ShoppingCartController {
    * @memberof ShoppingCartController
    */
   static async createOrder(req, res, next) {
-    const { shippingId } = req.body;
-    const { cartId } = req.session;
+    const { shipping_id } = req.body;  // eslint-disable-line
+    const { cart_id } = req.session;  // eslint-disable-line
     try {
-      
       // implement code for creating order here
     } catch (error) {
       return next(error);
@@ -123,7 +137,7 @@ class ShoppingCartController {
    * @memberof ShoppingCartController
    */
   static async getCustomerOrders(req, res, next) {
-    const { customerId } = req;
+    const { customer_id } = req;  // eslint-disable-line
     try {
       // implement code to get customer order
     } catch (error) {
@@ -141,8 +155,8 @@ class ShoppingCartController {
    * @memberof ShoppingCartController
    */
   static async getOrderSummary(req, res, next) {
-    const { orderId } = req.params;
-    const { customerId } = req;
+    const { order_id } = req.params;  // eslint-disable-line
+    const { customer_id } = req;   // eslint-disable-line
     try {
       // write code to get order summary
     } catch (error) {
@@ -157,8 +171,8 @@ class ShoppingCartController {
    * @param {*} next
    */
   static async processStripePayment(req, res, next) {
-    const { email, stripeToken, orderId } = req.body;
-    const { customerId } = req;
+    const { email, stripeToken, order_id } = req.body; // eslint-disable-line
+    const { customer_id } = req;  // eslint-disable-line
     try {
       // implement code to process payment and send order confirmation email here
     } catch (error) {
